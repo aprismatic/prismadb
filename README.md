@@ -34,7 +34,8 @@ Execute `docker version` to see if the Server is set to Windows, not Linux.
 All docker images in this demo are built on top of `microsoft/windowsservercore`, so the first launch might take some time due to the size of base image that needs to be downloaded (~4-5 GB). However, docker is smart and only needs to pull the base image once.
 
 1. Download the latest release of Prisma/DB and unpack it.
-2. From command prompt run the script `launch.ps1` and wait until you see the SQLCMD prompt.
+2. From command prompt run the script `launch.ps1` and wait until you see the SQLCMD prompt:
+![](https://raw.githubusercontent.com/PrismaDB/PrismaDB/master/img/sqlcmd.gif)
  * If you are having troubles running the script, make sure that your Powershell execution policy is set to `RemoteSigned` (see this instruction: https://superuser.com/a/106363)
 3. Use some of the following queries to try out the encrypted database:
 
@@ -59,4 +60,4 @@ SELECT TT.a, TT.b, TT.a + TT.b AS [SUM], TT.b * TT.a AS [MUL], (TT.b * TT.a) + T
 FROM   TT
 ```
 
-4. Connect to the database server directly (find IP address by calling the `get-SQL-Server-IPAddr.ps1` script, the port is 1433) using any database management tool (SSMS, dbeaver) and ensure that the database is indeed encrypted.
+Connect to the database server directly (find IP address by calling the `get-SQL-Server-IPAddr.ps1` script, the port is 1433) using any database management tool (SSMS, dbeaver) and ensure that the database is indeed encrypted.
