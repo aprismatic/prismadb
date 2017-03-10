@@ -7,7 +7,7 @@ The easiest way to try out Prisma/DB is to use Docker for Windows to set up the 
 ### 1. Docker Prerequisites
 Docker for Windows installer will do it for you, but you can enable the prerequisites manually. **Important**: enabling Hyper-V will disable VirtualBox or any other virtualization manager, you won't be able to start your virtual machines until you disable Hyper-V (or migrate your VMs to Hyper-V).
 
-Docker for Windows, requires `Microsoft-Hyper-V` and `Containers` features of Windows to be enabled. Using Powershell:
+Docker for Windows requires `Microsoft-Hyper-V` and `Containers` features of Windows to be enabled. Using Powershell:
 
 ```Powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
@@ -33,7 +33,7 @@ Execute `docker version` to see if the Server is set to Windows, not Linux.
 
 All docker images in this demo are built on top of `microsoft/windowsservercore`, so the first launch might take some time due to the size of base image that needs to be downloaded (~4-5 GB). However, docker is smart and only needs to pull the base image once.
 
-1. Download the latest release of Prisma/DB and unpack it.
+1. [Download the latest release](https://github.com/PrismaDB/PrismaDB/releases) of Prisma/DB and unpack it.
 2. From command prompt run the script `launch.ps1` and wait until you see the SQLCMD prompt:
 ![](https://raw.githubusercontent.com/PrismaDB/PrismaDB/master/img/sqlcmd.gif)
  * If you are having troubles running the script, make sure that your Powershell execution policy is set to `RemoteSigned` (see this instruction: https://superuser.com/a/106363)
