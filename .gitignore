@@ -1,0 +1,3 @@
+scripts/Build.ps1
+scripts/PrismaDB/
+scripts/PrismaDB*.zip
