@@ -1,1 +1,5 @@
-& docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' PrismaDB_SQL_Server
+param(
+    [string]$ContainerName = 'PrismaDB_SQL_Server'
+)
+
+& docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $ContainerName

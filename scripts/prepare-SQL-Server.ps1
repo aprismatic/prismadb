@@ -1,8 +1,12 @@
+param(
+    [string]$ContainerName = 'PrismaDB_SQL_Server'
+)
+
 Write-Host "Starting up SQL Server 2016 container on port 1433... "
 
-& ".\kill-PrismaDB-SQL-Server.ps1"
+& "$PSScriptRoot\kill-PrismaDB-SQL-Server.ps1" $ContainerName
 
-& docker run -d -p 1433:1433 -e sa_password=saPwd123 -e ACCEPT_EULA=Y --name PrismaDB_SQL_Server microsoft/mssql-server-windows-developer
+& docker run -d -p 1433:1433 -e sa_password=saPwd123 -e ACCEPT_EULA=Y --name $ContainerName microsoft/mssql-server-windows-developer
 
 if (!$?)
 {
@@ -14,7 +18,7 @@ if (!$?)
 
 Write-Host
 
-$sqlip = & ".\get-SQL-Server-IPAddr.ps1"
+$sqlip = & "$PSScriptRoot\get-SQL-Server-IPAddr.ps1" $ContainerName
 Write-Host -Foreground "green" "SQL Server is at ${sqlip}:1433"
 
 Write-Host
@@ -31,7 +35,7 @@ Write-Host -NoNewline "Creating a new SqlPackage container... "
 & docker create --name PrismaDB_SqlPackage --rm -t bazzilic/sqlpackage /a:Publish /tcs:"Data Source=$sqlip,1433;Persist Security Info=True;User ID=sa;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;Password=saPwd123;Database=Test-DB-1" /sf:C:/Test-DB-1.dacpac
 
 Write-Host "Pushing *.dacpac files to SqlPackage container..."
-& docker cp Test-DB-1.dacpac PrismaDB_SqlPackage:C:/Test-DB-1.dacpac
+& docker cp "$PSScriptRoot\Test-DB-1.dacpac" PrismaDB_SqlPackage:C:/Test-DB-1.dacpac
 
 Write-Host -NoNewline "Waiting for the SQL Server to start accepting connections.."
 $success = $false
