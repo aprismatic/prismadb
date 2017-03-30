@@ -47,17 +47,20 @@ CREATE TABLE TT
 	d VARCHAR(100) ENCRYPTED FOR (TEXT, SEARCH),
 	e VARCHAR(100)
 )
+GO
 
 INSERT INTO TT (TT.a, TT.b, TT.c, TT.d, TT.e) VALUES
 ( 1,  2,   3, 'Hello', 'Prisma/DB'),
 (12,  0,   7, 'Test', 'data'),
 ( 0,  2, 123, 'This is encrypted', 'And this is not'),
 (71, 67,  13, 'Last', 'row')
+GO
 
 -- Arithmetic operations over encrypted values
 SELECT TT.a, TT.b, TT.a + TT.b AS [SUM], TT.b * TT.a AS [MUL], (TT.b * TT.a) + TT.b AS [EXPR]
 FROM   TT
 WHERE  TT.b = 2
+GO
 ```
 
 Connect to the database server directly (find IP address by calling the `get-SQL-Server-IPAddr.ps1` script, the port is 1433) using any database management tool (SSMS, HeidiSQL, dbeaver) and ensure that the database is indeed encrypted.
