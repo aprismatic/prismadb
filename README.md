@@ -36,7 +36,7 @@ However, Docker is smart and only needs to pull the base image once.
 ![](https://raw.githubusercontent.com/PrismaDB/PrismaDB/master/img/sqlcmd.gif)
  * If you are having troubles running the script, make sure that your Powershell execution policy is set to `RemoteSigned` (see this instruction: https://superuser.com/a/106363)
 
-3. Use some of the following queries to try out the encrypted database:
+5. Use some of the following queries to try out the encrypted database:
 
 ```SQL
 CREATE TABLE TT
