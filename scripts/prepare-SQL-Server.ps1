@@ -6,7 +6,7 @@ Write-Host "Starting up SQL Server 2016 container on port 1433... "
 
 & "$PSScriptRoot\kill-PrismaDB-SQL-Server.ps1" $ContainerName
 
-& docker run -d -p 1433:1433 -e sa_password=saPwd123 -e ACCEPT_EULA=Y --name $ContainerName bazzilic/prismadb-mssql-server-dev
+& docker run -d -p 1433:1433 -e sa_password=saPwd123 -e ACCEPT_EULA=Y --name $ContainerName microsoft/mssql-server-windows-developer
 
 if (!$?)
 {

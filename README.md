@@ -29,27 +29,33 @@ However, Docker is smart and only needs to pull the base image once.
 
 2. From command prompt run the script `launch.ps1`.
 
-3. On a typical Windows 10 install, you will be prompted to allow new application to access network. Make sure to allow it to access public networks:  
+3. On a typical Windows 10 install, you will be prompted to allow new application to access network. Make sure to allow it to access public networks:
 ![](https://raw.githubusercontent.com/PrismaDB/PrismaDB/master/img/firewall.png)
 
-4. Wait until you see the SQLCMD prompt:  
+4. Wait until you see the SQLCMD prompt:
 ![](https://raw.githubusercontent.com/PrismaDB/PrismaDB/master/img/sqlcmd.gif)
  * If you are having troubles running the script, make sure that your Powershell execution policy is set to `RemoteSigned` (see this instruction: https://superuser.com/a/106363)
 
 5. Use some of the following queries to try out the encrypted database:
 
 ```SQL
+CREATE DATABASE TestDB
+GO
+
+USE TestDB
+GO
+
 CREATE TABLE TT
 (
 	a INT ENCRYPTED FOR (INTEGER_MULTIPLICATION, INTEGER_ADDITION, SEARCH),
 	b INT ENCRYPTED FOR (INTEGER_MULTIPLICATION, INTEGER_ADDITION, SEARCH),
 	c INT,
-	d VARCHAR(100) ENCRYPTED FOR (TEXT, SEARCH),
-	e VARCHAR(100)
+	d VARCHAR(30) ENCRYPTED FOR (TEXT, SEARCH),
+	e VARCHAR(30)
 )
 GO
 
-INSERT INTO TT (TT.a, TT.b, TT.c, TT.d, TT.e) VALUES
+INSERT INTO TT (a, b, c, d, e) VALUES
 ( 1,  2,   3, 'Hello', 'Prisma/DB'),
 (12,  0,   7, 'Test', 'data'),
 ( 0,  2, 123, 'This is encrypted', 'And this is not'),
@@ -57,10 +63,10 @@ INSERT INTO TT (TT.a, TT.b, TT.c, TT.d, TT.e) VALUES
 GO
 
 -- Arithmetic operations over encrypted values
-SELECT TT.a, TT.b, TT.a + TT.b AS [SUM], TT.b * TT.a AS [MUL], (TT.b * TT.a) + TT.b AS [EXPR]
+SELECT a, b, a + b AS [SUM], b * a AS [MUL], (b * a) + b AS [EXPR]
 FROM   TT
-WHERE  TT.b = 2
+WHERE  b = 2
 GO
 ```
 
-Connect to the database server directly (find IP address by calling the `get-SQL-Server-IPAddr.ps1` script, the port is 1433) using any database management tool (SSMS, HeidiSQL, dbeaver) and ensure that the database is indeed encrypted.
+Connect to the database server directly (find IP address by calling the `get-SQL-Server-IPAddr.ps1` script, the port is 1433) using any database management tool (SSMS, HeidiSQL, dbeaver) and see the partially encrypted database as it is stored on the server.
