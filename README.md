@@ -29,10 +29,10 @@ However, Docker is smart and only needs to pull the base image once.
 
 2. From command prompt run the script `launch.ps1`.
 
-3. On a typical Windows 10 install, you will be prompted to allow new application to access network. Make sure to allow it to access public networks:
+3. On a typical Windows 10 install, you will be prompted to allow new application to access network. Make sure to allow it to access public and private networks:  
 ![](https://raw.githubusercontent.com/PrismaDB/PrismaDB/master/img/firewall.png)
 
-4. Wait until you see the SQLCMD prompt:
+4. Wait until you see the SQLCMD prompt:  
 ![](https://raw.githubusercontent.com/PrismaDB/PrismaDB/master/img/sqlcmd.gif)
  * If you are having troubles running the script, make sure that your Powershell execution policy is set to `RemoteSigned` (see this instruction: https://superuser.com/a/106363)
 
