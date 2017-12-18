@@ -20,7 +20,7 @@ On Windows, it could be done by right-clicking the Docker icon in the taskbar an
 
 ### 2. Launching Prisma/DB Demo Suite
 
-To launch the demo suite you will need to open your command line interface. On Windows, you may launch Powershell; on Mac, you can launch Terminal app; if you are on Linux, you sure know what to do :)
+To launch the demo suite you will need to open your command line interface. On Windows, you may launch PowerShell; on Mac, you can launch Terminal app; if you are on Linux, you sure know what to do :)
 
 **1)** Pull the latest image of MySQL with Prisma/DB libraries:
 
@@ -36,7 +36,7 @@ Note, that it takes about 30 seconds before the db server starts accepting conne
 
 `> docker pull bazzilic/prismadb-proxy-mysql`
 
-And launch it as well, linking it to the databse container.
+And launch it as well, linking it to the database container.
 
 `> docker run --rm -d --name prismadb-proxy -p 4000:4000 --link=prismadb-db -e MYSQL_ADDRESS=prismadb-db bazzilic/prismadb-proxy-mysql`
 
@@ -68,7 +68,7 @@ FROM   t1
 WHERE  b = 2;
 ```
 
-Please note that Prisma/DB currrently supports only a subset of the full SQL.
+Please note that Prisma/DB currently supports only a subset of the full SQL.
 We are constantly working to support more.
 If you encounter a problem with your queries, please head to the Issues section and let us know!
 
