@@ -41,6 +41,7 @@ Load the image,
 `> docker load /path/to/prismadb-proxy-mysql-5d193957ed57.tar`
 
 And launch it as well, linking it to the database container.
+
 `> docker run --rm -d --name prismadb-proxy -p 4000:4000 --link=prismadb-db -e ListenPort=4000 -e ServerAddress=prismadb-db -e ServerPort=3306 -e Database=testdb 155.69.149.158:5000/prismadb-proxy-mysql`
 
 **3)** Obtain MySQL client to connect to the database through the Prisma/DB Proxy
