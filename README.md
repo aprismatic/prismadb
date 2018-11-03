@@ -32,19 +32,56 @@ And launch it, setting the root password to `toor`:
 
 Note, that it takes about 30 seconds before the db server starts accepting connections.
 
-**2)** Pull the latest image of Prisma/DB Proxy
+**2)** Download the latest image of Prisma/DB Proxy
 
-`> docker pull bazzilic/prismadb-proxy-mysql`
+Download from `http://aoa.cczy.my/prismadb/prismadb-proxy-mysql-5d193957ed57.tar`
+
+Load the image,
+
+`> docker load /path/to/prismadb-proxy-mysql-5d193957ed57.tar`
 
 And launch it as well, linking it to the database container.
+`> docker run --rm -d --name prismadb-proxy -p 4000:4000 --link=prismadb-db -e ListenPort=4000 -e ServerAddress=prismadb-db -e ServerPort=3306 -e Database=testdb 155.69.149.158:5000/prismadb-proxy-mysql`
 
-`> docker run --rm -d --name prismadb-proxy -p 4000:4000 --link=prismadb-db -e MYSQL_ADDRESS=prismadb-db bazzilic/prismadb-proxy-mysql`
+**3)** Obtain MySQL client to connect to the database through the Prisma/DB Proxy
 
-**3)** Launch MySQL command line tool to connect to the database through the Prisma/DB Proxy
+We recommend HeidiSQL, available at `https://www.heidisql.com/download.php`
 
-`> docker run -it --rm --link=prismadb-proxy mysql mysql -h prismadb-proxy -P 4000 -u root -ptoor`
+The MySQL CLI, Shell, or Workbench is currently not supported.
 
-**4)** Use some of the following queries to try out the encrypted database:
+**4)** Register the MySQL user into the proxy
+
+To be able to connect to the server, the proxy needs to know the credentials of the users, as passwords obtained from the client are hashed.
+
+Connect to the proxy using the following parameters:
+
+```
+Server:   localhost
+Port:     4000
+Username: init
+Password: init
+```
+
+Register the user:
+
+```SQL
+PRISMADB REGISTER USER 'root' PASS 'toor';
+```
+
+And logout of the session.
+
+**5)** Try out the encrypted database
+
+Log back into the proxy using the following parameters:
+
+```
+Server:   localhost
+Port:     4000
+Username: root
+Password: toor
+```
+
+Now you can use some of the following queries to try out the encrypted database:
 
 ```SQL
 CREATE TABLE t1
