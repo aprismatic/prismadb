@@ -12,7 +12,7 @@ services:
             MYSQL_ROOT_PASSWORD: "Qwer!234"
 
     proxy:
-        image: aprismatic.azurecr.io/prismadb-proxy-mysql:alpine
+        image: aprismatic/prismadb-proxy-mysql-trial:alpine
         container_name: prismadb_mysql_proxy
         networks:
             - prismadb

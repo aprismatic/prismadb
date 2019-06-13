@@ -1,8 +1,8 @@
 #!/bin/bash
 
-ContainerName=prismadb_mysql_proxy
-ServerAddress=prismadb_mysql_db
-ServerPort=3306
+ContainerName=prismadb_postgres_proxy
+ServerAddress=prismadb_postgres_db
+ServerPort=5432
 Database=testdb
 ListenPort=4000
 
@@ -16,7 +16,7 @@ while getopts n:h:p:d:l:a:s: option; do
     esac
 done
 
-echo "Starting up Prisma/DB MySQL Proxy container '${ContainerName}' on port ${ListenPort}... "
+echo "Starting up Prisma/DB PostgreSQL Proxy container '${ContainerName}' on port ${ListenPort}... "
 
 ./kill-proxy.sh ${ContainerName}
 
@@ -28,4 +28,4 @@ docker run -d \
     -e ServerPort=${ServerPort} \
     -e Database=${Database} \
     --name ${ContainerName} \
-    aprismatic/prismadb-proxy-mysql-trial:alpine
+    aprismatic/prismadb-proxy-postgres-trial:alpine

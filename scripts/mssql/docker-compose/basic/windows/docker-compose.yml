@@ -13,7 +13,7 @@ services:
             ACCEPT_EULA: "Y"
 
     proxy:
-        image: aprismatic.azurecr.io/prismadb-proxy-mssql:win-1809
+        image: aprismatic/prismadb-proxy-mssql-trial:win-1809
         container_name: prismadb_mssql_proxy
         networks:
             - prismadb
