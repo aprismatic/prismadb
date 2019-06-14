@@ -1,6 +1,11 @@
 # Prisma/DB
+
 [Prisma/DB](http://prismadb.com/) (http://prismadb.com/) is a cryptographic security layer for relational database systems, that currently supports Microsoft SQL Server, MySQL, MariaDB, PostgreSQL and CockroachDB.
 Started as a research project in [Nanyang Technological University](http://www.ntu.edu.sg/Pages/home.aspx) (Singapore), it is now a fast-developing product.
+
+SQL Server | MySQL | PostgreSQL
+--- | --- | ---
+[![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mssql-trial.svg)](https://microbadger.com/images/aprismatic/prismadb-proxy-mssql-trial "Get your own version badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mysql-trial.svg)](https://microbadger.com/images/aprismatic/prismadb-proxy-mysql-trial "Get your own version badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-postgres-trial.svg)](https://microbadger.com/images/aprismatic/prismadb-proxy-postgres-trial "Get your own version badge on microbadger.com")
 
 ## Try it out!
 The easiest way to try out Prisma/DB is to use Docker containers.
