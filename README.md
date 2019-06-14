@@ -5,7 +5,7 @@ Started as a research project in [Nanyang Technological University](http://www.n
 
 SQL Server | MySQL | PostgreSQL
 --- | --- | ---
-[![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mssql-trial.svg)](https://microbadger.com/images/aprismatic/prismadb-proxy-mssql-trial "Get your own version badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mysql-trial.svg)](https://microbadger.com/images/aprismatic/prismadb-proxy-mysql-trial "Get your own version badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-postgres-trial.svg)](https://microbadger.com/images/aprismatic/prismadb-proxy-postgres-trial "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mssql-trial.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mssql-trial) | [![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mysql-trial.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mysql-trial) | [![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-postgres-trial.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-postgres-trial)
 
 ## Try it out!
 The easiest way to try out Prisma/DB is to use Docker containers.
