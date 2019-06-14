@@ -40,7 +40,7 @@ This Docker Compose file will start a PostgreSQL server with Prisma/DB UDFs, as 
 
 **3)** Launch Psql command line tool to connect to the database through the Prisma/DB Proxy:
 
-`> docker exec -it prismadb_postgres_db psql -U postgres -h prismadb_postgres_proxy -p 4000`
+`> docker exec -it prismadb_postgres_db psql -U postgres -h prismadb_postgres_proxy -p 4000 testdb`
 
 Use password `Qwer!234` to authenticate as `postgres` user, and enter `\q` anytime to quit.
 
@@ -83,6 +83,6 @@ If you encounter a problem with your queries, please head to the Issues section 
 
 Connect to the database server directly (it's at `localhost:5432`) using any database management tool (HeidiSQL, Psql, etc.) or Psql directly from the PostgreSQL container:
 
-`> docker exec -it prismadb_postgres_db psql -U postgres -h 127.0.0.1 -p 5432`
+`> docker exec -it prismadb_postgres_db psql -U postgres -h 127.0.0.1 -p 5432 testdb`
 
 and you would be able to see the partially encrypted database as it is stored on the server, with the data in selected columns being encrypted.
