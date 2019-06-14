@@ -56,6 +56,9 @@ CREATE TABLE t1
 	e VARCHAR(30)
 );
 
+-- Display column details
+SHOW COLUMNS FROM t1;
+
 INSERT INTO t1 (a, b, c, d, e) VALUES
 ( 1,  2,   3, 'Hello', 'Prisma/DB'),
 (12,  0,   7, 'Test', 'data'),
@@ -63,7 +66,7 @@ INSERT INTO t1 (a, b, c, d, e) VALUES
 (71, 67,  13, 'Last', 'row');
 
 -- Arithmetic operations and search over encrypted values
-SELECT a, b, a + b AS SUM, b * a AS MUL, (b * a) + b AS EXPR
+SELECT a, b, a + b, b * a, (b * a) + b, c, d, e
 FROM   t1
 WHERE  b = 2;
 ```
