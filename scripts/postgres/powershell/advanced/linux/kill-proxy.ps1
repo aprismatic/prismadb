@@ -1,5 +1,5 @@
 param(
-    [string]$ContainerName = 'prismadb_mssql_db'
+    [string]$ContainerName = 'prismadb_postgres_proxy'
 )
 
 Write-Host "Stopping & removing container named '${ContainerName}'..."

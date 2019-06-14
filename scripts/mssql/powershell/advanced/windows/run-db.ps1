@@ -9,6 +9,7 @@ Write-Host "Starting up Microsoft SQL Server Database server container '$Contain
 & "$PSScriptRoot\kill-db.ps1" $ContainerName
 
 & docker run -d `
+    --restart always `
     -p ${ListenPort}:1433 `
     -e SA_PASSWORD=${Password} `
     -e ACCEPT_EULA=Y `

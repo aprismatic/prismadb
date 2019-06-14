@@ -13,8 +13,4 @@ Write-Host "Starting up Microsoft SQL Server Database server container '$Contain
     -e SA_PASSWORD=${Password} `
     -e ACCEPT_EULA=Y `
     --name ${ContainerName} `
-    aprismatic/mssql-server-windows-developer-fulltext
-
-$ip = & "$PSScriptRoot\get-db-ip.ps1"
-
-Write-Host -Foreground "green" "SQL Server is at $ip,$Port"
+    aprismatic/mssql-server-linux-fulltext:latest

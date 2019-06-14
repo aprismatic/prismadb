@@ -9,12 +9,9 @@ Write-Host "Starting up Microsoft SQL Server Database server container '$Contain
 & "$PSScriptRoot\kill-db.ps1" $ContainerName
 
 & docker run -d `
+    --restart always `
     -p ${ListenPort}:1433 `
     -e SA_PASSWORD=${Password} `
     -e ACCEPT_EULA=Y `
     --name ${ContainerName} `
-    aprismatic/mssql-server-windows-developer-fulltext
-
-$ip = & "$PSScriptRoot\get-db-ip.ps1"
-
-Write-Host -Foreground "green" "SQL Server is at $ip,$Port"
+    aprismatic/mssql-server-linux-fulltext:latest

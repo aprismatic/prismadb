@@ -10,17 +10,11 @@ Write-Host "Starting up Prisma/DB Microsoft SQL Server Proxy container '$Contain
 
 & "$PSScriptRoot\kill-proxy.ps1" $ContainerName
 
-$svrip = & "$PSScriptRoot\get-db-ip.ps1"
-
 & docker run -d `
     --link=${ServerAddress} `
     -p ${ListenPort}:${ListenPort} `
     -e ListenPort=${ListenPort} `
-    -e DataSource=${svrip},${ServerPort} `
+    -e DataSource=${ServerAddress},${ServerPort} `
     -e InitialCatalog=${Database} `
     --name ${ContainerName} `
-    aprismatic/prismadb-proxy-mssql-trial:win-1809
-
-$ip = & "$PSScriptRoot\get-proxy-ip.ps1"
-
-Write-Host -Foreground "green" "SQL Server Proxy is at $ip,$ListenPort"
+    aprismatic/prismadb-proxy-mssql-trial:alpine

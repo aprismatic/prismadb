@@ -3,7 +3,7 @@
 ContainerName=prismadb_mssql_proxy
 ServerAddress=prismadb_mysql_db
 ServerPort=1433
-InitialCatalog=testdb
+Database=testdb
 ListenPort=4000
 AdminUserId=sa
 DatabaseSettings=/dbsettings.json
@@ -13,7 +13,7 @@ while getopts n:h:p:d:l:a:s: option; do
     n) ContainerName=${OPTARG} ;;
     h) ServerAddress=${OPTARG} ;;
     p) ServerPort=${OPTARG} ;;
-    d) InitialCatalog=${OPTARG} ;;
+    d) Database=${OPTARG} ;;
     l) ListenPort=${OPTARG} ;;
     a) AdminUserId=${OPTARG} ;;
     s) DatabaseSettings=${OPTARG} ;;
@@ -31,7 +31,7 @@ docker run -d \
     -v ${PWD}${DatabaseSettings}:${DatabaseSettings} \
     -e ListenPort=${ListenPort} \
     -e DataSource=${ServerAddress},${ServerPort} \
-    -e InitialCatalog=${InitialCatalog} \
+    -e InitialCatalog=${Database} \
     -e AdminUserId=${AdminUserId} \
     -e DatabaseSettings=${DatabaseSettings} \
     --name ${ContainerName} \
