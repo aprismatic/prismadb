@@ -5,17 +5,20 @@ Started as a research project in [Nanyang Technological University](http://www.n
 
 #### MySQL
 ![Build status](https://ci.appveyor.com/api/projects/status/rcr8urkhoefnue2i?svg=true)
-[![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mysql-trial.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mysql-trial)
+![Versions](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mysql-trial.svg)
+[![](https://images.microbadger.com/badges/image/aprismatic/prismadb-proxy-mysql-trial.svg)](https://microbadger.com/images/aprismatic/prismadb-proxy-mysql-trial)
 [![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-mysql-trial.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mysql-trial)
 
 #### SQL Server
 ![Build status](https://ci.appveyor.com/api/projects/status/6kkwwji6o60vm2sr?svg=true)
-[![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mssql-trial.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mssql-trial)
+![Versions](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mssql-trial.svg)
+[![](https://images.microbadger.com/badges/image/aprismatic/prismadb-proxy-mssql-trial.svg)](https://microbadger.com/images/aprismatic/prismadb-proxy-mssql-trial)
 [![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-mssql-trial.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mssql-trial)
 
 #### PostgreSQL
 ![Build status](https://ci.appveyor.com/api/projects/status/qeppg5rbfmh4qdri?svg=true)
-[![](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-postgres-trial.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-postgres-trial)
+![Versions](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-postgres-trial.svg)
+[![](https://images.microbadger.com/badges/image/aprismatic/prismadb-proxy-postgres-trial.svg)](https://microbadger.com/images/aprismatic/prismadb-proxy-postgres-trial)
 [![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-postgres-trial.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-postgres-trial)
 
 ## Try it out!
