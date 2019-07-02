@@ -17,7 +17,7 @@ echo "Starting up MySQL Database server container '${ContainerName}' on port ${P
 ./kill-db.sh ${ContainerName}
 
 docker run -d \
-    -p ${ListenPort}:3306 \
+    -p ${Port}:3306 \
     -e MYSQL_ROOT_PASSWORD=${Password} \
     --name ${ContainerName} \
     aprismatic/prismadb-mysql:latest

@@ -17,7 +17,7 @@ echo "Starting up PostgreSQL Database server container '${ContainerName}' on por
 ./kill-db.sh ${ContainerName}
 
 docker run -d \
-    -p ${ListenPort}:5432 \
+    -p ${Port}:5432 \
     -e POSTGRES_PASSWORD=${Password} \
     --name ${ContainerName} \
     aprismatic/prismadb-postgres:latest

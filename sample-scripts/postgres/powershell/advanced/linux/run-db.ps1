@@ -10,7 +10,7 @@ Write-Host "Starting up PostgreSQL Database server container '$ContainerName' on
 
 & docker run -d `
     --restart always `
-    -p ${ListenPort}:5432 `
+    -p ${Port}:5432 `
     -e POSTGRES_PASSWORD=${Password} `
     --name ${ContainerName} `
     aprismatic/prismadb-postgres:latest

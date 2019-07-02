@@ -10,7 +10,7 @@ Write-Host "Starting up MySQL Database server container '$ContainerName' on port
 
 & docker run -d `
     --restart always `
-    -p ${ListenPort}:3306 `
+    -p ${Port}:3306 `
     -e MYSQL_ROOT_PASSWORD=${Password} `
     --name ${ContainerName} `
     aprismatic/prismadb-mysql:latest

@@ -17,7 +17,7 @@ echo "Starting up Microsoft SQL Server Database server container '${ContainerNam
 ./kill-db.sh ${ContainerName}
 
 docker run -d \
-    -p ${ListenPort}:1433 \
+    -p ${Port}:1433 \
     -e SA_PASSWORD=${Password} \
     -e ACCEPT_EULA=Y \
     --name ${ContainerName} \
