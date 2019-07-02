@@ -5,7 +5,7 @@ param(
     [string]$Database = 'testdb',
     [string]$ListenPort = 4000,
     [string]$AdminUserId='root',
-    [string]$DatabaseSettings='/dbsettings.json'
+    [string]$KeyfilePath='/keys.json'
 )
 
 Write-Host "Starting up Prisma/DB MySQL Proxy container '$ContainerName' on port $ListenPort... "
@@ -16,12 +16,12 @@ Write-Host "Starting up Prisma/DB MySQL Proxy container '$ContainerName' on port
     --restart always `
     --link=${ServerAddress} `
     -p ${ListenPort}:${ListenPort} `
-    -v ${PSScriptRoot}${DatabaseSettings}:${DatabaseSettings} \
+    -v ${PSScriptRoot}${KeyfilePath}:${KeyfilePath} \
     -e ListenPort=${ListenPort} `
     -e ServerAddress=${ServerAddress} `
     -e ServerPort=${ServerPort} `
     -e Database=${Database} `
     -e AdminUserId=${AdminUserId} `
-    -e DatabaseSettings=${DatabaseSettings} `
+    -e KeyfilePath=${KeyfilePath} `
     --name ${ContainerName} `
     aprismatic.azurecr.io/prismadb-proxy-mysql:alpine

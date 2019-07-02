@@ -22,7 +22,7 @@ services:
             restart_policy:
                 condition: any
         volumes:
-            - ${PWD}/dbsettings.json:/dbsettings.json
+            - ${PWD}/keys.json:/keys.json
         networks:
             - prismadb
         ports:
@@ -34,7 +34,7 @@ services:
             DataSource: "db"
             InitialCatalog: "testdb"
             AdminUserId: "sa"
-            DatabaseSettings: /dbsettings.json
+            KeyfilePath: /keys.json
 
 networks:
     prismadb:

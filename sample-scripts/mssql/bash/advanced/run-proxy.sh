@@ -6,7 +6,7 @@ ServerPort=1433
 Database=testdb
 ListenPort=4000
 AdminUserId=sa
-DatabaseSettings=/dbsettings.json
+KeyfilePath=/keys.json
 
 while getopts n:h:p:d:l:a:s: option; do
     case "${option}" in
@@ -16,7 +16,7 @@ while getopts n:h:p:d:l:a:s: option; do
     d) Database=${OPTARG} ;;
     l) ListenPort=${OPTARG} ;;
     a) AdminUserId=${OPTARG} ;;
-    s) DatabaseSettings=${OPTARG} ;;
+    k) KeyfilePath=${OPTARG} ;;
     esac
 done
 
@@ -28,11 +28,11 @@ docker run -d \
     --restart always \
     --link=${ServerAddress} \
     -p ${ListenPort}:${ListenPort} \
-    -v ${PWD}${DatabaseSettings}:${DatabaseSettings} \
+    -v ${PWD}${KeyfilePath}:${KeyfilePath} \
     -e ListenPort=${ListenPort} \
     -e DataSource=${ServerAddress},${ServerPort} \
     -e InitialCatalog=${Database} \
     -e AdminUserId=${AdminUserId} \
-    -e DatabaseSettings=${DatabaseSettings} \
+    -e KeyfilePath=${KeyfilePath} \
     --name ${ContainerName} \
     aprismatic.azurecr.io/prismadb-proxy-mssql:alpine

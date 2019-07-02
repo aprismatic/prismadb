@@ -6,7 +6,7 @@ ServerPort=5432
 Database=testdb
 ListenPort=4000
 AdminUserId=postgres
-DatabaseSettings=/dbsettings.json
+KeyfilePath=/keys.json
 
 while getopts n:h:p:d:l:a:s: option; do
     case "${option}" in
@@ -16,7 +16,7 @@ while getopts n:h:p:d:l:a:s: option; do
     d) Database=${OPTARG} ;;
     l) ListenPort=${OPTARG} ;;
     a) AdminUserId=${OPTARG} ;;
-    s) DatabaseSettings=${OPTARG} ;;
+    k) KeyfilePath=${OPTARG} ;;
     esac
 done
 
@@ -28,12 +28,12 @@ docker run -d \
     --restart always \
     --link=${ServerAddress} \
     -p ${ListenPort}:${ListenPort} \
-    -v ${PWD}${DatabaseSettings}:${DatabaseSettings} \
+    -v ${PWD}${KeyfilePath}:${KeyfilePath} \
     -e ListenPort=${ListenPort} \
     -e ServerAddress=${ServerAddress} \
     -e ServerPort=${ServerPort} \
     -e Database=${Database} \
     -e AdminUserId=${AdminUserId} \
-    -e DatabaseSettings=${DatabaseSettings} \
+    -e KeyfilePath=${KeyfilePath} \
     --name ${ContainerName} \
     aprismatic.azurecr.io/prismadb-proxy-postgres:alpine

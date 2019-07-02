@@ -5,7 +5,7 @@ param(
     [string]$Database = 'testdb',
     [string]$ListenPort = 4000,
     [string]$AdminUserId='sa',
-    [string]$DatabaseSettings='/dbsettings.json'
+    [string]$KeyfilePath='/keys.json'
 )
 
 Write-Host "Starting up Prisma/DB Microsoft SQL Server Proxy container '$ContainerName' on port $ListenPort... "
@@ -18,12 +18,12 @@ $svrip = & "$PSScriptRoot\get-db-ip.ps1"
     --restart always `
     --link=${ServerAddress} `
     -p ${ListenPort}:${ListenPort} `
-    -v ${PSScriptRoot}${DatabaseSettings}:${DatabaseSettings} `
+    -v ${PSScriptRoot}${KeyfilePath}:${KeyfilePath} `
     -e ListenPort=${ListenPort} `
     -e DataSource=${svrip},${ServerPort} `
     -e InitialCatalog=${Database} `
     -e AdminUserId=${AdminUserId} `
-    -e DatabaseSettings=${DatabaseSettings} `
+    -e KeyfilePath=${KeyfilePath} `
     --name ${ContainerName} `
     aprismatic.azurecr.io/prismadb-proxy-mssql:win-1809
 
