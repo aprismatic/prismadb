@@ -3,7 +3,7 @@
 [Prisma/DB](https://prismadb.com/) (https://prismadb.com/) is a cryptographic security layer for relational database systems, that currently supports Microsoft SQL Server, MySQL, MariaDB, PostgreSQL and CockroachDB.
 Started as a research project in [Nanyang Technological University](http://www.ntu.edu.sg/Pages/home.aspx) (Singapore), it is now a fast-growing product developed by [Aprismatic](https://aprismatic.com).
 
-**Links**: [📚 Documentation](https://github.com/aprismatic/PrismaDB/wiki)  |  [📦 Docker images](https://github.com/aprismatic/PrismaDB/wiki/Docker-Images)  |  [Prisma/DB website](https://prismadb.com/)  |  [Aprismatic website](https://aprismatic.com) | 
+**Links**: [📚 Documentation](https://github.com/aprismatic/PrismaDB/wiki)  |  [📦 Docker images](https://github.com/aprismatic/PrismaDB/wiki/Docker-Images)  |  [Prisma/DB website](https://prismadb.com/)  |  [Aprismatic website](https://aprismatic.com)
 
 #### MySQL
 ![Build status](https://ci.appveyor.com/api/projects/status/rcr8urkhoefnue2i?svg=true)
