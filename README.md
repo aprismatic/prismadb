@@ -41,7 +41,7 @@ To launch the demo suite you will need to open your command line interface. On W
 **1)** Obtain the Docker Compose file:
 
 Download/save the following YAML Docker Compose file to your machine:
-[/sample-scripts/postgres/docker-compose/basic/linux/docker-compose.yml](https://github.com/aprismatic/PrismaDB/blob/master/sample-scripts/postgres/docker-compose/basic/linux/docker-compose.yml) [[Raw File](https://raw.githubusercontent.com/aprismatic/PrismaDB/master/scripts/postgres/docker-compose/basic/linux/docker-compose.yml)]
+[/sample-scripts/postgres/docker-compose/basic/linux/docker-compose.yml](https://github.com/aprismatic/PrismaDB/blob/master/sample-scripts/postgres/docker-compose/basic/linux/docker-compose.yml) [[Raw File](https://raw.githubusercontent.com/aprismatic/PrismaDB/master/sample-scripts/postgres/docker-compose/basic/linux/docker-compose.yml)]
 
 This Docker Compose file will start a PostgreSQL server with Prisma/DB UDFs, as well as the Prisma/DB Proxy (trial mode) for PostgreSQL. Importing/exporting of encryption keys is disabled in the trial mode of Prisma/DB Proxy, but other than that, it is a fully featured build.
 
