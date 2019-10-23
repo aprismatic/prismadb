@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+
+    db:
+        image: aprismatic/prismadb-postgres:latest
+        container_name: prismadb_postgres_db
+        networks:
+            - prismadb
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_PASSWORD: "Qwer!234"
+
+    proxy:
+        image: aprismatic/prismadb-proxy-postgres:alpine
+        container_name: prismadb_postgres_proxy
+        volumes:
+            - ./data/:/data/
+        networks:
+            - prismadb
+        ports:
+            - 4000:4000
+        depends_on:
+            - db
+        environment:
+            ListenPort: "4000"
+            ServerAddress: "db"
+            ServerPort: "5432"
+            Database: "testdb"
+            AdminUserId: "postgres"
+
+networks:
+    prismadb:
