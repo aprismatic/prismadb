@@ -20,9 +20,10 @@ Started as a research project in [Nanyang Technological University](http://www.n
 ![Versions](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-postgres.svg)
 [![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-postgres.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-postgres)
 
-## Try it out!
+## Quickstart Guide
 The easiest way to try out Prisma/DB is to use Docker containers.
 This will also keep your computer clutter-free.
+For a more comprehensive guide on working with Prisma/DB CE or Enterprise, please head over to [documentation](https://github.com/aprismatic/PrismaDB/wiki/Getting-Started-(Proxies)).
 
 **Important for Windows users**: Enabling Hyper-V (required by Docker for Windows) will disable VirtualBox or any other virtualization manager.
 You won't be able to start your virtual machines until you disable Hyper-V (or migrate your VMs to Hyper-V).
