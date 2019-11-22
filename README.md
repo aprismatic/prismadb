@@ -26,7 +26,7 @@ This will also keep your computer clutter-free.
 For a more comprehensive guide on working with Prisma/DB CE or Enterprise, please head over to [documentation](https://github.com/aprismatic/PrismaDB/wiki/Getting-Started-(Proxies)).
 
 **Important for Windows users**: Enabling Hyper-V (required by Docker for Windows) will disable VirtualBox or any other virtualization manager.
-You won't be able to start your virtual machines until you disable Hyper-V (or migrate your VMs to Hyper-V).
+You won't be able to start your VirtualBox VMs until you disable Hyper-V (or migrate your VMs to Hyper-V).
 
 ### 1. Installing Docker
 Install Docker by following the instructions at https://docs.docker.com/install/.
