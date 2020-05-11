@@ -1,6 +1,6 @@
 # Metasyntax Used
 
-The following metasyntax will be used throughout the entire wiki:
+The following metasyntax will be used throughout the entire documentation:
 
 | Metasyntax          | Description                                                                                  |
 | ------------------- | -------------------------------------------------------------------------------------------- |

@@ -1,24 +1,26 @@
 site_name: Prisma/DB Documentation
-theme:
-  name: material
+theme: material
 nav:
-  - "Home": "index.md"
-  - "Getting Started":
-      - "Proxy Package":
-          - "Overview": "getting-started-proxies.md"
-          - "Configuration Options": "configuration-options.md"
-          - "Sample Docker Scripts": "sample-docker-scripts.md"
-          - "Supported Clients": "supported-clients.md"
-          - "Docker Images": "docker-images.md"
-      - "Library Package": "getting-started-libraries.md"
-  - "Documentation":
-      - "Encryption Schemes": "encryption-schemes.md"
-      - "Data Types": "data-types.md"
-      - "Supported SQL":
-          - "Metasyntax Used": "metasyntax-used.md"
-          - "Language Structure": "language-structure.md"
-          - "Data Definition Statements": "data-definition-statements.md"
-          - "Data Manipulation Statements": "data-manipulation-statements.md"
-          - "Native Commands": "native-commands.md"
-  - "About":
-      - "Changelog": "changelog.md"
+  - Home: index.md
+  - Getting Started:
+      - For Proxies:
+          - Overview: getting-started-proxies.md
+          - Configuration Options: configuration-options.md
+          - Sample Docker Scripts: sample-docker-scripts.md
+          - Supported Clients: supported-clients.md
+          - Docker Images: docker-images.md
+      - For Libraries: getting-started-libraries.md
+  - Documentation:
+      - Encryption Schemes: encryption-schemes.md
+      - Data Types: data-types.md
+      - Supported SQL:
+          - Metasyntax Used: metasyntax-used.md
+          - Language Structure: language-structure.md
+          - Data Definition Statements: data-definition-statements.md
+          - Data Manipulation Statements: data-manipulation-statements.md
+          - Native Commands: native-commands.md
+  - About:
+      - Changelog: changelog.md
+  - Choose Doc Version: https://readthedocs.org/projects/prismadb/versions/
+
+copyright: "&copy; 2020, <a href='https://www.aprismatic.com'>Aprismatic</a>"

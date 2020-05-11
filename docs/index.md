@@ -1,8 +1,8 @@
 # Prisma/DB
 
-Welcome to the Prisma/DB wiki! This wiki aims to help you understand and use Prisma/DB.
+Welcome to the Prisma/DB documentation! This documentation aims to help you understand and use Prisma/DB.
 
-Supported SQL queries and commands are described in this wiki, together with its explanation and examples. Any other valid SQL queries will be executed at the actual database directly without passing through the transformative core encryption module.
+Supported SQL queries and commands are described in this documentation, together with its explanation and examples. Any other valid SQL queries will be executed at the actual database directly without passing through the transformative core encryption module.
 
 ## Introduction
 
