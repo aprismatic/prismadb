@@ -3,7 +3,7 @@
 [Prisma/DB](https://prismadb.com/) (https://prismadb.com/) is a cryptographic security layer for relational database systems, that currently supports Microsoft SQL Server, MySQL, MariaDB, PostgreSQL and CockroachDB.
 Started as a research project in [Nanyang Technological University](http://www.ntu.edu.sg/Pages/home.aspx) (Singapore), it is now a fast-growing product developed by [Aprismatic](https://aprismatic.com).
 
-**Links**: [📚 Documentation](https://github.com/aprismatic/PrismaDB/wiki)  |  [📦 Docker images](https://github.com/aprismatic/PrismaDB/wiki/Docker-Images)  |  [Prisma/DB website](https://prismadb.com/)  |  [Aprismatic website](https://aprismatic.com)
+**Links**: [📚 Documentation](https://github.com/aprismatic/prismadb/wiki)  |  [📦 Docker images](https://github.com/aprismatic/prismadb/wiki//docker-images)  |  [Prisma/DB website](https://prismadb.com/)  |  [Aprismatic website](https://aprismatic.com)
 
 #### MySQL
 ![Build status](https://ci.appveyor.com/api/projects/status/rcr8urkhoefnue2i?svg=true)
@@ -23,7 +23,7 @@ Started as a research project in [Nanyang Technological University](http://www.n
 ## Quickstart Guide
 The easiest way to try out Prisma/DB is to use Docker containers.
 This will also keep your computer clutter-free.
-For a more comprehensive guide on working with Prisma/DB CE or Enterprise, please head over to [documentation](https://github.com/aprismatic/PrismaDB/wiki/Getting-Started-(Proxies)).
+For a more comprehensive guide on working with Prisma/DB CE or Enterprise, please head over to [documentation](https://github.com/aprismatic/prismadb/wiki/Getting-Started-(Proxies)).
 
 **Important for Windows users**: Enabling Hyper-V (required by Docker for Windows) will disable VirtualBox or any other virtualization manager.
 You won't be able to start your VirtualBox VMs until you disable Hyper-V (or migrate your VMs to Hyper-V).
@@ -44,7 +44,7 @@ To launch the demo suite you will need to open your command line interface. On W
 **1)** Obtain the Docker Compose file:
 
 Download/save the following YAML Docker Compose file to your machine:
-[/sample-scripts/postgres/docker-compose/linux/docker-compose.yml](https://github.com/aprismatic/PrismaDB/blob/master/sample-scripts/postgres/docker-compose/linux/docker-compose.yml) [[Raw File](https://raw.githubusercontent.com/aprismatic/PrismaDB/master/sample-scripts/postgres/docker-compose/linux/docker-compose.yml)]
+[/sample-scripts/postgres/docker-compose/linux/docker-compose.yml](https://github.com/aprismatic/prismadb/blob/master/sample-scripts/postgres/docker-compose/linux/docker-compose.yml) [[Raw File](https://raw.githubusercontent.com/aprismatic/prismadb/master/sample-scripts/postgres/docker-compose/linux/docker-compose.yml)]
 
 This Docker Compose file will start a PostgreSQL server with Prisma/DB UDFs, as well as the Prisma/DB Proxy (trial mode) for PostgreSQL. Importing/exporting of encryption keys is disabled in the trial mode of Prisma/DB Proxy, but other than that, it is a fully featured build.
 
