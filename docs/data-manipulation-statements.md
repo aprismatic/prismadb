@@ -35,11 +35,11 @@ table_reference:
   | ( select_statement ) [AS] alias
 ```
 
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
-- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
 - `alias` follows the same syntax as `table` or `column`.
-- `count` is an integer literal value. For more information, refer to [Language Structure - Literal Values](language-structure#literal-values)
+- `count` is an integer literal value. For more information, refer to [Language Structure - Literal Values](../language-structure#literal-values)
 - `select_statement` is a nested `SELECT` statement that follows the rules of this definition.
 
 #### Examples
@@ -98,11 +98,11 @@ table_reference:
   | ( select_statement ) [AS] alias
 ```
 
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
-- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
 - `alias` follows the same syntax as `table` or `column`.
-- `count` is an integer literal value. For more information, refer to [Language Structure - Literal Values](language-structure#literal-values)
+- `count` is an integer literal value. For more information, refer to [Language Structure - Literal Values](../language-structure#literal-values)
 - `select_statement` is a nested `SELECT` statement that follows the rules of this definition.
 
 #### Examples
@@ -161,11 +161,11 @@ table_reference:
   | ( select_statement ) [AS] alias
 ```
 
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
-- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
 - `alias` follows the same syntax as `table` or `column`.
-- `count` is an integer literal value. For more information, refer to [Language Structure - Literal Values](language-structure#literal-values)
+- `count` is an integer literal value. For more information, refer to [Language Structure - Literal Values](../language-structure#literal-values)
 - `select_statement` is a nested `SELECT` statement that follows the rules of this definition.
 
 #### Examples
@@ -203,9 +203,9 @@ value-list:
     (expression,...)
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
 
 #### Examples
 
@@ -230,9 +230,9 @@ value-list:
     (expression,...)
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
 
 #### Examples
 
@@ -257,9 +257,9 @@ value-list:
     (expression,...)
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
 
 #### Examples
 
@@ -286,9 +286,9 @@ where_condition:
     expression
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
 
 #### Examples
 
@@ -319,9 +319,9 @@ where_condition:
     expression
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
 
 #### Examples
 
@@ -352,9 +352,9 @@ where_condition:
     expression
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
 
 #### Examples
 
@@ -381,8 +381,8 @@ where_condition:
     expression
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
 
 #### Examples
 
@@ -407,8 +407,8 @@ where_condition:
     expression
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
 
 #### Examples
 
@@ -433,8 +433,8 @@ where_condition:
     expression
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `expression`, refer to [Language Structure - Expression Syntax](language-structure#expression-syntax)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `expression`, refer to [Language Structure - Expression Syntax](../language-structure#expression-syntax)
 
 #### Examples
 

@@ -22,12 +22,12 @@ default_increment_option:
     DEFAULT default_value | AUTO_INCREMENT
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `data_type`, refer to [Data Types (MySQL)](data-types#mysql)
-- `default_value` can be `CURRENT_TIMESTAMP`, or literal values defined at [Language Structure - Literal Values (MySQL)](language-structure#mysql)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `data_type`, refer to [Data Types (MySQL)](../data-types#mysql)
+- `default_value` can be `CURRENT_TIMESTAMP`, or literal values defined at [Language Structure - Literal Values (MySQL)](../language-structure#mysql)
 - Encryption of columns with `default_value` is currently not supported.
-- For more information on `encryption_type`, refer to [Encryption Schemes](encryption-schemes)
+- For more information on `encryption_type`, refer to [Encryption Schemes](../encryption-schemes)
 - If the optional `[FOR (encryption_type,...)]` in `enc_option` is omitted, the column will be encrypted with `STORE` by default.
 - Encryption of columns with primary key constraints are not supported.
 - Encryption of auto incrementing columns are not supported.
@@ -79,12 +79,12 @@ default_increment_option:
     DEFAULT default_value | IDENTITY(1,1)
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `data_type`, refer to [Data Types (SQL Server)](data-types#sql-server)
-- For more information on `default_value`, refer to [Language Structure - Literal Values (SQL Server)](language-structure#sql-server)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `data_type`, refer to [Data Types (SQL Server)](../data-types#sql-server)
+- For more information on `default_value`, refer to [Language Structure - Literal Values (SQL Server)](../language-structure#sql-server)
 - Encryption of columns with `default_value` is currently not supported.
-- For more information on `encryption_type`, refer to [Encryption Schemes](encryption-schemes)
+- For more information on `encryption_type`, refer to [Encryption Schemes](../encryption-schemes)
 - If the optional `[FOR (encryption_type,...)]` in `enc_option` is omitted, the column will be encrypted with `STORE` by default.
 - Currently, only `IDENTITY(1,1)` (seed of 1, increment by 1) incrementing property is supported. Future releases will support customizable seed and increment values.
 - Encryption of columns with primary key constraints are not supported.
@@ -135,12 +135,12 @@ default_increment_option:
     DEFAULT default_value
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `data_type`, refer to [Data Types (PostgreSQL)](data-types#postgresql)
-- `default_value` can be `CURRENT_TIMESTAMP`, or literal values defined at [Language Structure - Literal Values (PostgreSQL)](language-structure#postgresql)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `data_type`, refer to [Data Types (PostgreSQL)](../data-types#postgresql)
+- `default_value` can be `CURRENT_TIMESTAMP`, or literal values defined at [Language Structure - Literal Values (PostgreSQL)](../language-structure#postgresql)
 - Encryption of columns with `default_value` is currently not supported.
-- For more information on `encryption_type`, refer to [Encryption Schemes](encryption-schemes)
+- For more information on `encryption_type`, refer to [Encryption Schemes](../encryption-schemes)
 - If the optional `[FOR (encryption_type,...)]` in `enc_option` is omitted, the column will be encrypted with `STORE` by default.
 - Encryption of columns with primary key constraints are not supported.
 - Encryption of auto incrementing (`SERIAL`) columns are not supported.
@@ -178,8 +178,8 @@ CREATE INDEX index_name ON table (column,...)
 
 - `index_name` follows the rules of table names.
 - Creating an index on an encrypted column will create indexes on both actual `SEARCH` and `RANGE` columns, if available.
-- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
 
 #### Examples
 
@@ -201,8 +201,8 @@ CREATE INDEX index_name ON table (column,...)
 
 - `index_name` follows the rules of table names.
 - Creating an index on an encrypted column will create indexes on both actual `SEARCH` and `RANGE` columns, if available.
-- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
 
 #### Examples
 
@@ -224,8 +224,8 @@ CREATE INDEX index_name ON table (column,...)
 
 - `index_name` follows the rules of table names.
 - Creating an index on an encrypted column will create indexes on both actual `SEARCH` and `RANGE` columns, if available.
-- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
 
 #### Examples
 
@@ -239,7 +239,7 @@ CREATE INDEX "idx1" ON "table1" ("col1", "col2");
 
 ## ALTER TABLE
 
-ALTER TABLE queries are only supported for non-encrypted columns and nullability for encrypted columns, for security and access control reasons. To modify the encryption scheme of a column, use the [Native Commands - ENCRYPT](native-commands#encrypt) or [Native Commands - DECRYPT](native-commands#decrypt) commands.
+ALTER TABLE queries are only supported for non-encrypted columns and nullability for encrypted columns, for security and access control reasons. To modify the encryption scheme of a column, use the [Native Commands - ENCRYPT](../native-commands#encrypt) or [Native Commands - DECRYPT](../native-commands#decrypt) commands.
 
 ### MySQL
 
@@ -251,9 +251,9 @@ alter_specification:
     MODIFY COLUMN column column_definition
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1)
-- For more information on `column_definition`, refer to [Data Definition Statements - CREATE TABLE (MySQL)](data-definition-statements/#mysql)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1)
+- For more information on `column_definition`, refer to [Data Definition Statements - CREATE TABLE (MySQL)](../data-definition-statements/#mysql)
 
 #### Examples
 
@@ -279,9 +279,9 @@ alter_specification:
     ALTER COLUMN column column_definition
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `column_definition`, refer to [Data Definition Statements - CREATE TABLE (SQL Server)](data-definition-statements/#sql-server)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `column_definition`, refer to [Data Definition Statements - CREATE TABLE (SQL Server)](../data-definition-statements/#sql-server)
 
 #### Examples
 
@@ -307,9 +307,9 @@ alter_specification:
     ALTER COLUMN column column_definition
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](language-structure#postgresql_1)
-- For more information on `column_definition`, refer to [Data Definition Statements - CREATE TABLE (PostgreSQL)](data-definition-statements/#postgresql)
+- For more information on `table`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (PostgreSQL)](../language-structure#postgresql_1)
+- For more information on `column_definition`, refer to [Data Definition Statements - CREATE TABLE (PostgreSQL)](../data-definition-statements/#postgresql)
 
 #### Examples
 
@@ -329,7 +329,7 @@ ALTER TABLE "table1" ALTER COLUMN
 DROP TABLE table
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names](language-structure#schema-object-names)
+- For more information on `table`, refer to [Language Structure - Schema Object Names](../language-structure#schema-object-names)
 
 #### Examples
 
@@ -359,7 +359,7 @@ Returns all the columns in a specified table, including the data type, null, key
 SHOW COLUMNS FROM table
 ```
 
-- For more information on `table`, refer to [Language Structure - Schema Object Names](language-structure#schema-object-names)
+- For more information on `table`, refer to [Language Structure - Schema Object Names](../language-structure#schema-object-names)
 
 #### Examples
 

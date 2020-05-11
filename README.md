@@ -3,7 +3,7 @@
 [Prisma/DB](https://prismadb.com/) (https://prismadb.com/) is a cryptographic security layer for relational database systems, that currently supports Microsoft SQL Server, MySQL, MariaDB, PostgreSQL and CockroachDB.
 Started as a research project in [Nanyang Technological University](http://www.ntu.edu.sg/Pages/home.aspx) (Singapore), it is now a fast-growing product developed by [Aprismatic](https://aprismatic.com).
 
-**Links**: [📚 Documentation](https://github.com/aprismatic/prismadb/wiki)  |  [📦 Docker images](https://github.com/aprismatic/prismadb/wiki//docker-images)  |  [Prisma/DB website](https://prismadb.com/)  |  [Aprismatic website](https://aprismatic.com)
+**Links**: [📚 Documentation](https://prismadb.readthedocs.io/en/latest/)  |  [📦 Docker images](https://prismadb.readthedocs.io/en/latest/docker-images/)  |  [Prisma/DB website](https://prismadb.com/)  |  [Aprismatic website](https://aprismatic.com)
 
 #### MySQL
 ![Build status](https://ci.appveyor.com/api/projects/status/rcr8urkhoefnue2i?svg=true)
@@ -23,7 +23,7 @@ Started as a research project in [Nanyang Technological University](http://www.n
 ## Quickstart Guide
 The easiest way to try out Prisma/DB is to use Docker containers.
 This will also keep your computer clutter-free.
-For a more comprehensive guide on working with Prisma/DB CE or Enterprise, please head over to [documentation](https://github.com/aprismatic/prismadb/wiki/Getting-Started-(Proxies)).
+For a more comprehensive guide on working with Prisma/DB CE or Enterprise, please head over to [documentation](https://prismadb.readthedocs.io/en/latest/getting-started-proxies/).
 
 **Important for Windows users**: Enabling Hyper-V (required by Docker for Windows) will disable VirtualBox or any other virtualization manager.
 You won't be able to start your VirtualBox VMs until you disable Hyper-V (or migrate your VMs to Hyper-V).

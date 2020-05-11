@@ -10,7 +10,7 @@ The database encryption keys will be saved to the specified `file_uri`.
 PRISMADB EXPORT KEYS [TO file_uri]
 ```
 
-- `file_uri` is a string literal value. For more information, refer to [Language Structure - Literal Values](language-structure#literal-values)
+- `file_uri` is a string literal value. For more information, refer to [Language Structure - Literal Values](../language-structure#literal-values)
 - If the optional `[TO file_uri]` is omitted, it will be saved in the default directory and filename.
 
 #### Examples
@@ -47,8 +47,8 @@ PRISMADB ENCRYPT column [FOR (encryption_type,...)] [STATUS]
 
 - This command executes asynchronously in the background for proxy containers.
 - If the optional `[STATUS]` is appended to the command, Prisma/DB will return a result table with the current progress of the command.
-- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1) or [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
-- For more information on `encryption_type`, refer to [Encryption Schemes](encryption-schemes)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1) or [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
+- For more information on `encryption_type`, refer to [Encryption Schemes](../encryption-schemes)
 - If the optional `[FOR (encryption_type,...)]` is omitted, the column will be encrypted with `STORE` by default.
 
 #### Examples
@@ -68,7 +68,7 @@ PRISMADB DECRYPT column [STATUS]
 
 - This command executes asynchronously in the background for proxy containers.
 - If the optional `[STATUS]` is appended to the command, Prisma/DB will return a result table with the current progress of the command.
-- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](language-structure#mysql_1) or [Language Structure - Schema Object Names (SQL Server)](language-structure#sql-server_1)
+- For more information on `column`, refer to [Language Structure - Schema Object Names (MySQL)](../language-structure#mysql_1) or [Language Structure - Schema Object Names (SQL Server)](../language-structure#sql-server_1)
 
 #### Examples
 
@@ -104,7 +104,7 @@ PRISMADB REBALANCE OPETREE [WITH VALUES (numeric_literal,...)] [STATUS]
 - This command executes asynchronously in the background for proxy containers.
 - If the optional `[STATUS]` is appended to the command, Prisma/DB will return a result table with the current progress of the command.
 - If the optional `[WITH VALUES (numeric_literal,...)]` is defined, Prisma/DB will add those values to the OPE tree before rebalancing.
-- For more information on `numeric_literal`, refer to [Language Structure - Literal Values (MySQL)](language-structure#mysql) or [Language Structure - Literal Values (SQL Server)](language-structure#sql-server)
+- For more information on `numeric_literal`, refer to [Language Structure - Literal Values (MySQL)](../language-structure#mysql) or [Language Structure - Literal Values (SQL Server)](../language-structure#sql-server)
 
 #### Examples
 
@@ -187,7 +187,7 @@ The license will be updated with the specified key.
 PRISMADB SET LICENSE KEY license_key;
 ```
 
-- `license_key` is a string literal value. For more information, refer to [Language Structure - Literal Values](language-structure#literal-values)
+- `license_key` is a string literal value. For more information, refer to [Language Structure - Literal Values](../language-structure#literal-values)
 
 #### Examples
 
@@ -217,7 +217,7 @@ The specified user credentials will be stored in the proxy for authentication wi
 PRISMADB REGISTER USER userid PASSWORD password
 ```
 
-- `userid` and `password` are string literal values. For more information, refer to [Language Structure - Literal Values](language-structure#literal-values)
+- `userid` and `password` are string literal values. For more information, refer to [Language Structure - Literal Values](../language-structure#literal-values)
 
 #### Examples
 

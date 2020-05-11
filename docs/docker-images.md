@@ -28,7 +28,7 @@
 
 #### PostgreSQL Repository: [`aprismatic/prismadb-proxy-postgres-ce`](https://hub.docker.com/r/aprismatic/prismadb-proxy-postgres-ce)
 
-Community edition images are identical to the standard images, with the [`CommunityEd` enviroment variable](configuration-options) set to `true`. These set of images makes it easier to get started with the community edition without manually setting the enviroment variable. Community edition runs in a single thread, and does not support wildcard encryption.
+Community edition images are identical to the standard images, with the [`CommunityEd` enviroment variable](../configuration-options) set to `true`. These set of images makes it easier to get started with the community edition without manually setting the enviroment variable. Community edition runs in a single thread, and does not support wildcard encryption.
 
 ## Supporting Images
 
