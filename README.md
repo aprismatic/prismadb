@@ -5,20 +5,11 @@ Started as a research project in [Nanyang Technological University](http://www.n
 
 **Links**: [📚 Documentation](https://prismadb.readthedocs.io/en/latest/)  |  [📦 Docker images](https://prismadb.readthedocs.io/en/latest/docker-images/)  |  [Prisma/DB website](https://prismadb.com/)  |  [Aprismatic website](https://aprismatic.com)
 
-#### MySQL
-![Build status](https://ci.appveyor.com/api/projects/status/rcr8urkhoefnue2i?svg=true)
-![Versions](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mysql.svg)
-[![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-mysql.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mysql)
-
-#### SQL Server
-![Build status](https://ci.appveyor.com/api/projects/status/6kkwwji6o60vm2sr?svg=true)
-![Versions](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-mssql.svg)
-[![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-mssql.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mssql)
-
-#### PostgreSQL
-![Build status](https://ci.appveyor.com/api/projects/status/qeppg5rbfmh4qdri?svg=true)
-![Versions](https://images.microbadger.com/badges/version/aprismatic/prismadb-proxy-postgres.svg)
-[![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-postgres.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-postgres)
+[![Documentation Status](https://readthedocs.org/projects/prismadb/badge/?version=latest)](https://prismadb.readthedocs.io/en/latest/?badge=latest)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/aprismatic/prismadb?include_prereleases)
+[![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-mysql.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mysql "MySQL")
+[![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-mssql.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-mssql "SQL Server")
+[![](https://img.shields.io/docker/pulls/aprismatic/prismadb-proxy-postgres.svg)](https://hub.docker.com/r/aprismatic/prismadb-proxy-postgres "PostgreSQL")
 
 ## Quickstart Guide
 The easiest way to try out Prisma/DB is to use Docker containers.
