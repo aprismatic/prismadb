@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.4.5] - 2020-05-13
+
+### Added
+
+- `PRISMADB OPETREE INSERT` feature & command
+- `PRISMADB OPETREE STATUS` feature & command
+- `PRISMADB OPETREE REBUILD` feature & command
+
+### Changed
+
+- Renamed `PRISMADB EXPORT KEYS` command to `PRISMADB KEYS EXPORT`
+- Renamed `PRISMADB UPDATE KEYS` command to `PRISMADB KEYS UPDATE`
+- Renamed `PRISMADB SAVE OPETREE` command to `PRISMADB OPETREE SAVE`
+- Renamed `PRISMADB LOAD OPETREE` command to `PRISMADB OPETREE LOAD`
+- Renamed `PRISMADB LOAD SCHEMA` command to `PRISMADB SCHEMA LOAD`
+- Renamed `PRISMADB REFRESH LICENSE` command to `PRISMADB LICENSE REFRESH`
+- Renamed `PRISMADB SET LICENSE KEY` command to `PRISMADB LICENSE SET KEY`
+- Renamed `PRISMADB CHECK LICENSE STATUS` command to `PRISMADB LICENSE STATUS`
+
+### Removed
+
+- `PRISMADB REBALANCE OPETREE` command
+
 ## [0.4.4] - 2020-04-14
 
 ### Added

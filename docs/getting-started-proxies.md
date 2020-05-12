@@ -24,7 +24,7 @@ If you have a license, there are 2 ways that you can load the license.
 
 The first way is to use the physical key file before starting the proxy. First make sure that a volume is mapped to the `/data/` directory of the container, if you are using the default path for the license key file. Place the license key file in the mapped directory before starting the proxy. The proxy should load the license key, and the banner message in the logs will reflect the license status.
 
-The second way is to use the [`SET LICENSE KEY`](../native-commands#set-license-key) command. This works if the proxy is already running and you want a fast and easy way to update the license.
+The second way is to use the [`LICENSE SET KEY`](../native-commands#license-set-key) command. This works if the proxy is already running and you want a fast and easy way to update the license.
 
 ## 2. First Start
 
@@ -42,7 +42,7 @@ Now that you are logged in through the proxy, you may proceed to create your sch
 
 Prisma/DB has multiple [encryption schemes](../encryption-schemes) available, all of which has different purposes, and have their respective pros and cons. For example, if you need to perform computation over numeric columns, you will need to encrypt those columns with `ADDITION` and `MULTIPLICATION`. If performance is your priority, and you do not require any other features, you should choose `STORE` (AES).
 
-If you need to perform comparison operations on the columns such as `=`, `<`, `>=` on the columns, you will need `SEARCH` or `RANGE`. `SEARCH` is more secure, but generally slower when querying as it introduces false positive by design. `RANGE` is less secure, but it enables operations such as `>` and `<=`. `RANGE` is implemented with a binary tree, and would need to be rebalanced occasionally, which takes introduces quite a bit of downtime as it involves updating the entire database. For a quick overview of the encryption schemes, we have a [support matrix](../encryption-schemes#support-matrix) that shows the features enabled by each encryption scheme.
+If you need to perform comparison operations on the columns such as `=`, `<`, `>=` on the columns, you will need `SEARCH` or `RANGE`. `SEARCH` is more secure, but generally slower when querying as it introduces false positive by design. `RANGE` is less secure, but it enables operations such as `>` and `<=`. `RANGE` is implemented with a binary tree, and would need to be re-balanced occasionally, which takes introduces quite a bit of downtime as it involves updating the entire database. For a quick overview of the encryption schemes, we have a [support matrix](../encryption-schemes#support-matrix) that shows the features enabled by each encryption scheme.
 
 ## 4. Querying
 
@@ -52,7 +52,7 @@ As Prisma/DB aims to be as transparent as possible, the data manipulation langua
 
 ### 5.1 Exporting encryption keys
 
-The [`PRISMADB EXPORT KEYS`](../native-commands#export-keys) command exports the encryption keys into a JSON file for safekeeping. If you are running the Prisma/DB proxy in a Docker container, you will then need to extract the file from the container using the `docker cp` Docker command. This JSON file will be needed the next time the Prisma/DB proxy is started up.
+The [`PRISMADB KEYS EXPORT`](../native-commands#keys-export) command exports the encryption keys into a JSON file for safekeeping. If you are running the Prisma/DB proxy in a Docker container, you will then need to extract the file from the container using the `docker cp` Docker command. This JSON file will be needed the next time the Prisma/DB proxy is started up.
 
 ### 5.2 Performance
 
@@ -62,9 +62,9 @@ Only use the `WILDCARD` encryption scheme when absolutely necessary. It uses ful
 
 ### 5.3 Order preserving encoding tree
 
-If the `RANGE` encryption scheme is used anywhere in the schema, an Order Preserving Encoding (OPE) binary tree will be utilized. This tree has a maximum height of 63 nodes, and once that height is reached, you will be unable to insert any more rows/values into the database. Therefore, a [`PRISMADB REBALANCE OPETREE`](../native-commands#rebalance-opetree) command needs to be performed from time to time.
+If the `RANGE` encryption scheme is used anywhere in the schema, an Order Preserving Encoding (OPE) binary tree will be utilized. This tree has a maximum height of 63 nodes, and once that height is reached, you will be unable to insert any more rows/values into the database. Therefore, a [`PRISMADB OPETREE REBUILD`](../native-commands#opetree-rebuild) command needs to be performed from time to time.
 
-If you are inserting a lot of consecutively increasing/decreasing values into a column with `RANGE` encryption, you may reach the maximum tree height very easily. In such scenarios, you may execute a [`PRISMADB REBALANCE OPETREE WITH VALUES(...)`](../native-commands#rebalance-opetree) command to seed the OPE tree first before inserting the data.
+If you are inserting a lot of consecutively increasing/decreasing values into a column with `RANGE` encryption, you may reach the maximum tree height very easily. In such scenarios, you may execute a [`PRISMADB OPETREE INSERT VALUES(...)`](../native-commands#opetree-insert) command to seed the OPE tree first before inserting the data.
 
 Rebalancing of the OPE tree is time consuming, and will introduce downtime as the entire database is updated. Therefore, the command should be scheduled during maintenance periods.
 
@@ -74,23 +74,23 @@ The [`PRISMADB ENCRYPT`](../native-commands#encrypt) and [`DECRYPT`](../native-c
 
 ### 5.5 Changing encryption keys
 
-To change the encryption keys, you will need to perform a [`PRISMADB UPDATE KEYS`](../native-commands#update-keys) command. Prisma/DB will generate a new set of keys, and re-encrypt all of the columns in the database. This is a very time consuming process, and will introduce downtime as the entire database is updated. Therefore, this command should be scheduled during maintenance periods. You will need to [export the keys](../#51-exporting-encryption-keys) after the update keys command is completed to export the new set of encryption keys for safekeeping.
+To change the encryption keys, you will need to perform a [`PRISMADB KEYS UPDATE`](../native-commands#keys-update) command. Prisma/DB will generate a new set of keys, and re-encrypt all of the columns in the database. This is a very time consuming process, and will introduce downtime as the entire database is updated. Therefore, this command should be scheduled during maintenance periods. You will need to [export the keys](../#51-exporting-encryption-keys) after the update keys command is completed to export the new set of encryption keys for safekeeping.
 
 ### 5.6 Running multiple instances of Prisma/DB proxy
 
 Prisma/DB has partial support for running multiple instances of the proxy. The main considerations are sharing of the database schema, and the OPE tree.
 
-The database schema is stored in a table named `PrismaDB_Schema`. It is automatically saved when a change is made to the schema, and automatically loaded on the first query of every startup of the Prisma/DB proxy. However, while the proxies are running, and a change to the schema is made, a [`PRISMADB LOAD SCHEMA`](../native-commands#load-schema) command would need to be executed on all other proxies to update the proxies' knowledge of the schema.
+The database schema is stored in a table named `PrismaDB_Schema`. It is automatically saved when a change is made to the schema, and automatically loaded on the first query of every startup of the Prisma/DB proxy. However, while the proxies are running, and a change to the schema is made, a [`PRISMADB SCHEMA LOAD`](../native-commands#schema-load) command would need to be executed on all other proxies to update the proxies' knowledge of the schema.
 
 Currently, the OPE tree cannot sync between multiple instances, therefore, if multiple instances is a must, `RANGE` encryption should not be used, or there may be unexpected behavior.
 
 ### 5.7 Updating license
 
-If your current license has expired, you will be unable to to perform queries. To update the license, simply replace the current license key file in the mapped `/data/` directory, and run a [`PRISMADB REFRESH LICENSE`](../native-commands#refresh-license) command to update your license.
+If your current license has expired, you will be unable to to perform queries. To update the license, simply replace the current license key file in the mapped `/data/` directory, and run a [`PRISMADB LICENSE REFRESH`](../native-commands#license-refresh) command to update your license.
 
 ### 5.8 Shutting down
 
-If a shutdown is planned, it is recommended to save the OPE tree with the [`PRISMADB SAVE OPETREE`](../native-commands#save-opetree) command, as the OPE tree resides in the memory during normal operation. This command will save the OPE tree to the database for persistent storage, and when the proxy is started up again, it will load the tree from the database automatically.
+If a shutdown is planned, it is recommended to save the OPE tree with the [`PRISMADB OPETREE SAVE`](../native-commands#opetree-save) command, as the OPE tree resides in the memory during normal operation. This command will save the OPE tree to the database for persistent storage, and when the proxy is started up again, it will load the tree from the database automatically.
 
 ## 6. Subsequent Starts
 

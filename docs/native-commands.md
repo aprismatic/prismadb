@@ -2,12 +2,12 @@
 
 Native commands control the operation of the Prisma/DB proxy, and is only executable by the administrative user defined in the environment variables / command line option / settings file.
 
-## EXPORT KEYS
+## KEYS EXPORT
 
 The database encryption keys will be saved to the specified `file_uri`.
 
 ```
-PRISMADB EXPORT KEYS [TO file_uri]
+PRISMADB KEYS EXPORT [TO file_uri]
 ```
 
 - `file_uri` is a string literal value. For more information, refer to [Language Structure - Literal Values](../language-structure#literal-values)
@@ -16,16 +16,16 @@ PRISMADB EXPORT KEYS [TO file_uri]
 #### Examples
 
 ```
-PRISMADB EXPORT KEYS;
-PRISMADB EXPORT KEYS TO '/data/keys.json';
+PRISMADB KEYS EXPORT;
+PRISMADB KEYS EXPORT TO '/data/keys.json';
 ```
 
-## UPDATE KEYS
+## KEYS UPDATE
 
 The database encryption keys will be regenerated and all columns in the database will be re-encrypted using the new keys.
 
 ```
-PRISMADB UPDATE KEYS [STATUS]
+PRISMADB KEYS UPDATE [STATUS]
 ```
 
 - This command executes asynchronously in the background for proxy containers.
@@ -34,7 +34,7 @@ PRISMADB UPDATE KEYS [STATUS]
 #### Examples
 
 ```
-PRISMADB UPDATE KEYS;
+PRISMADB KEYS UPDATE;
 ```
 
 ## ENCRYPT
@@ -76,48 +76,62 @@ PRISMADB DECRYPT column [STATUS]
 PRISMADB DECRYPT Product.Price;
 ```
 
-## SAVE OPETREE
+## OPETREE SAVE
 
 The Order Preserving Encoding (OPE) tree will be saved in the database for restoration on proxy restarts.
 
 ```
-PRISMADB SAVE OPETREE
+PRISMADB OPETREE SAVE
 ```
 
 - The OPE tree is saved in a new table named `PrismaDB_OpeTree`.
-- Execution of the `REBALANCE OPETREE` command will perform this action as well.
+- Execution of the `OPETREE REBUILD` and `OPETREE INSERT` commands will perform this action as well.
 
 #### Examples
 
 ```
-PRISMADB SAVE OPETREE;
+PRISMADB OPETREE SAVE;
 ```
 
-## REBALANCE OPETREE
+## OPETREE INSERT
 
-The Order Preserving Encoding (OPE) tree will be re-balanced for performance, and saved in the database.
+Provided values will be inserted into the Order Preserving Encoding (OPE) tree in a most balanced way, and saved in the database.
 
 ```
-PRISMADB REBALANCE OPETREE [WITH VALUES (numeric_literal,...)] [STATUS]
+PRISMADB OPETREE INSERT VALUES (numeric_literal,...)]
+```
+
+- For more information on `numeric_literal`, refer to [Language Structure - Literal Values](../language-structure#literal-values)
+
+#### Examples
+
+```
+PRISMADB OPETREE INSERT VALUES (20, 50, 100);
+```
+
+## OPETREE REBUILD
+
+The Order Preserving Encoding (OPE) tree will be rebuild entirely from all the `RANGE` encoding enabled data stored in the database. This is used if the OPE tree stored in the database is out-of-sync with the data. For version 0.4.5, it is also the only way to re-balance the OPE tree.
+
+```
+PRISMADB REBUILD OPETREE [STATUS]
 ```
 
 - This command executes asynchronously in the background for proxy containers.
 - If the optional `[STATUS]` is appended to the command, Prisma/DB will return a result table with the current progress of the command.
-- If the optional `[WITH VALUES (numeric_literal,...)]` is defined, Prisma/DB will add those values to the OPE tree before rebalancing.
-- For more information on `numeric_literal`, refer to [Language Structure - Literal Values (MySQL)](../language-structure#mysql) or [Language Structure - Literal Values (SQL Server)](../language-structure#sql-server)
 
 #### Examples
 
 ```
-PRISMADB REBALANCE OPETREE WITH VALUES (20, 50, 100);
+PRISMADB REBUILD OPETREE;
 ```
 
-## LOAD OPETREE
+## OPETREE LOAD
 
 The Order Preserving Encoding (OPE) tree will be loaded from the database.
 
 ```
-PRISMADB LOAD OPETREE
+PRISMADB OPETREE LOAD
 ```
 
 - The OPE tree is loaded from the table named `PrismaDB_OpeTree`.
@@ -126,15 +140,15 @@ PRISMADB LOAD OPETREE
 #### Examples
 
 ```
-PRISMADB LOAD OPETREE;
+PRISMADB OPETREE LOAD;
 ```
 
-## LOAD SCHEMA
+## SCHEMA LOAD
 
 The database schema will be loaded from the database.
 
 ```
-PRISMADB LOAD SCHEMA
+PRISMADB SCHEMA LOAD
 ```
 
 - The database schema is loaded from the table named `PrismaDB_Schema`.
@@ -144,7 +158,7 @@ PRISMADB LOAD SCHEMA
 #### Examples
 
 ```
-PRISMADB LOAD SCHEMA;
+PRISMADB SCHEMA LOAD;
 ```
 
 ## BYPASS
@@ -163,12 +177,12 @@ PRISMADB BYPASS query
 PRISMADB BYPASS SELECT * FROM Products;
 ```
 
-## REFRESH LICENSE
+## LICENSE REFRESH
 
 The license key will be read from the license key file and the license status will be updated.
 
 ```
-PRISMADB REFRESH LICENSE
+PRISMADB LICENSE REFRESH
 ```
 
 - Replace the existing license key file with an updated license before running this command.
@@ -176,15 +190,15 @@ PRISMADB REFRESH LICENSE
 #### Examples
 
 ```
-PRISMADB REFRESH LICENSE;
+PRISMADB LICENSE REFRESH;
 ```
 
-## SET LICENSE KEY
+## LICENSE SET KEY
 
 The license will be updated with the specified key.
 
 ```
-PRISMADB SET LICENSE KEY license_key;
+PRISMADB LICENSE SET KEY license_key;
 ```
 
 - `license_key` is a string literal value. For more information, refer to [Language Structure - Literal Values](../language-structure#literal-values)
@@ -192,21 +206,21 @@ PRISMADB SET LICENSE KEY license_key;
 #### Examples
 
 ```
-PRISMADB SET LICENSE KEY 'cXdlcnR5dWlvcGxramhnZmRzYXp4Y3Zibm0=';
+PRISMADB LICENSE SET KEY 'cXdlcnR5dWlvcGxramhnZmRzYXp4Y3Zibm0=';
 ```
 
-## CHECK LICENSE STATUS
+## LICENSE STATUS
 
 The license status will be displayed as a table.
 
 ```
-CHECK LICENSE STATUS
+LICENSE STATUS
 ```
 
 #### Examples
 
 ```
-CHECK LICENSE STATUS;
+LICENSE STATUS;
 ```
 
 ## REGISTER USER (MySQL Only)
