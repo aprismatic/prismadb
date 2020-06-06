@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.6] - 2020-06-05
+
+### Changed
+
+- Improved performance of ElGamal and Paillier crypto-systems
+
 ## [0.4.5] - 2020-05-13
 
 ### Added

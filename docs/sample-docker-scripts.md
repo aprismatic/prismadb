@@ -15,7 +15,7 @@ docker run -d -p 4000:4000 \
     -e ServerPort=3306 \
     -e Database=testdb \
     --name PrismaDB_Proxy \
-    aprismatic.azurecr.io/prismadb-proxy-mysql:alpine
+    aprismatic/prismadb-proxy-mysql:alpine
 ```
 
 ## SQL Server with Prisma/DB Proxy on Windows (PowerShell)
@@ -37,7 +37,7 @@ docker run -d -p 4000:4000 `
     -e DataSource=${svrip},1433 `
     -e InitialCatalog=testdb `
     --name PrismaDB_SQL_Server_Proxy `
-    aprismatic.azurecr.io/prismadb-proxy-mssql:win-1809
+    aprismatic/prismadb-proxy-mssql:win-1809
 
 $proxyip = docker inspect `
             --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' `
