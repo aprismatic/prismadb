@@ -114,7 +114,7 @@ PRISMADB OPETREE INSERT VALUES (20, 50, 100);
 The Order Preserving Encoding (OPE) tree will be rebuild entirely from all the `RANGE` encoding enabled data stored in the database. This is used if the OPE tree stored in the database is out-of-sync with the data. For version 0.4.5, it is also the only way to re-balance the OPE tree.
 
 ```
-PRISMADB REBUILD OPETREE [STATUS]
+PRISMADB OPETREE REBUILD [STATUS]
 ```
 
 - This command executes asynchronously in the background for proxy containers.
@@ -123,7 +123,7 @@ PRISMADB REBUILD OPETREE [STATUS]
 #### Examples
 
 ```
-PRISMADB REBUILD OPETREE;
+PRISMADB OPETREE REBUILD;
 ```
 
 ## OPETREE LOAD
