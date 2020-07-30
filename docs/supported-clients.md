@@ -2,15 +2,18 @@
 
 ## MySQL
 
-| Client              | URL                                                  | Supported |
-| ------------------- | ---------------------------------------------------- | --------- |
-| MySQL CLI           | <https://dev.mysql.com/doc/refman/8.0/en/mysql.html> | Yes       |
-| MySQL Shell         | <https://dev.mysql.com/downloads/shell/>             | Yes       |
-| HeidiSQL            | <https://www.heidisql.com/>                          | Yes       |
-| pymysql             | <https://pymysql.readthedocs.io/en/latest/>          | Yes       |
-| .NET MySqlConnector | <https://www.nuget.org/packages/MySqlConnector/>     | Yes\*     |
-| .NET MySql.Data     | <https://www.nuget.org/packages/MySql.Data/>         | Yes\*     |
-| MySQL Workbench     | <https://dev.mysql.com/downloads/workbench/>         | No        |
+| Client                   | URL                                                                       | Supported |
+| ------------------------ | ------------------------------------------------------------------------- | --------- |
+| MySQL CLI                | <https://dev.mysql.com/doc/refman/8.0/en/mysql.html>                      | Yes       |
+| MySQL Shell              | <https://dev.mysql.com/downloads/shell/>                                  | Yes       |
+| HeidiSQL                 | <https://www.heidisql.com/>                                               | Yes       |
+| pymysql                  | <https://pymysql.readthedocs.io/en/latest/>                               | Yes       |
+| .NET MySqlConnector      | <https://www.nuget.org/packages/MySqlConnector/>                          | Yes\*     |
+| .NET MySql.Data          | <https://www.nuget.org/packages/MySql.Data/>                              | Yes\*     |
+| JDBC MariaDB Java Client | <https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client> | Yes       |
+| JDBC MySQL Connector/J   | <https://mvnrepository.com/artifact/mysql/mysql-connector-java>           | No        |
+| MySQL Workbench          | <https://dev.mysql.com/downloads/workbench/>                              | No        |
+
 
 ## SQL Server
 
