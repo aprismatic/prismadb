@@ -62,7 +62,7 @@ Only use the `WILDCARD` encryption scheme when absolutely necessary. It uses ful
 
 ### 5.3 Order preserving encoding tree
 
-If the `RANGE` encryption scheme is used anywhere in the schema, an Order Preserving Encoding (OPE) binary tree will be utilized. This tree has a maximum height of 63 nodes, and once that height is reached, you will be unable to insert any more rows/values into the database. Therefore, a [`PRISMADB OPETREE REBUILD`](../native-commands#opetree-rebuild) command needs to be performed from time to time.
+If the `RANGE` encryption scheme is used anywhere in the schema, an Order Preserving Encoding (OPE) binary tree will be utilized. This tree has a maximum height of 63 nodes, and once that height is reached, you will be unable to insert any more rows/values into the database. Therefore, a [`PRISMADB OPETREE REBALANCE`](../native-commands#opetree-rebalance) command needs to be performed from time to time.
 
 If you are inserting a lot of consecutively increasing/decreasing values into a column with `RANGE` encryption, you may reach the maximum tree height very easily. In such scenarios, you may execute a [`PRISMADB OPETREE INSERT VALUES(...)`](../native-commands#opetree-insert) command to seed the OPE tree first before inserting the data.
 

@@ -109,9 +109,48 @@ PRISMADB OPETREE INSERT VALUES (numeric_literal,...)]
 PRISMADB OPETREE INSERT VALUES (20, 50, 100);
 ```
 
+## OPETREE REBALANCE
+
+The Order Preserving Encoding (OPE) tree will be re-balanced incrementally. Re-balancing incrementally is used if the OPE tree has exceeded the maximum height after `OPETREE INSERT`, or as a regular maintenance procedure to prevent exceeding the maximum height during normal operation. Re-balancing can be stopped anytime, with support for stopping after *n* number of minutes, hours, or iterations.
+
+```
+PRISMADB OPETREE REBALANCE [STATUS | stop_parameter]
+
+stop_parameter:
+    STOP [AFTER numeric_literal ITERATIONS | HOURS | MINUTES]
+```
+
+- This command executes asynchronously in the background for proxy containers.
+- If the optional `STOP [AFTER numeric_literal ITERATIONS]` is appended to the command, Prisma/DB will start re-balancing the OPE tree, and automatically stop after the defined number of iterations.
+- If the optional `STOP [AFTER numeric_literal HOURS]` is appended to the command, Prisma/DB will start re-balancing the OPE tree, and automatically stop after the defined number of hours.
+- If the optional `STOP [AFTER numeric_literal MINUTES]` is appended to the command, Prisma/DB will start re-balancing the OPE tree, and automatically stop after the defined number of minutes.
+- If the optional `STOP` is appended to the command, Prisma/DB will stop an active re-balancing after the current iteration.
+- If the optional `[STATUS]` is appended to the command, Prisma/DB will return a result table with the current progress of the command.
+
+#### Examples
+
+```
+PRISMADB OPETREE REBALANCE;
+```
+```
+PRISMADB OPETREE REBALANCE STOP AFTER 3 ITERATIONS;
+```
+```
+PRISMADB OPETREE REBALANCE STOP AFTER 1 HOURS;
+```
+```
+PRISMADB OPETREE REBALANCE STOP AFTER 120 MINUTES;
+```
+```
+PRISMADB OPETREE REBALANCE STOP;
+```
+```
+PRISMADB OPETREE REBALANCE STATUS;
+```
+
 ## OPETREE REBUILD
 
-The Order Preserving Encoding (OPE) tree will be rebuild entirely from all the `RANGE` encoding enabled data stored in the database. This is used if the OPE tree stored in the database is out-of-sync with the data. For version 0.4.5, it is also the only way to re-balance the OPE tree.
+The Order Preserving Encoding (OPE) tree will be rebuild entirely from all the `RANGE` encoding enabled data stored in the database. This is used if the OPE tree stored in the database is out-of-sync with the data.
 
 ```
 PRISMADB OPETREE REBUILD [STATUS]

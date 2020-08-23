@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.0] - 2020-08-15
+
+### Added
+
+- New `PRISMADB OPETREE REBALANCE` feature with incremental re-balancing
+
 ## [0.4.6] - 2020-06-05
 
 ### Changed
