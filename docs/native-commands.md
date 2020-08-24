@@ -76,22 +76,25 @@ PRISMADB DECRYPT column [STATUS]
 PRISMADB DECRYPT Product.Price;
 ```
 
-## OPETREE SAVE
+## OPETREE STATUS
 
-The Order Preserving Encoding (OPE) tree will be saved in the database for restoration on proxy restarts.
+To check the status of the OPE tree.
 
 ```
-PRISMADB OPETREE SAVE
+PRISMADB OPETREE STATUS
 ```
-
-- The OPE tree is saved in a new table named `PrismaDB_OpeTree`.
-- Execution of the `OPETREE REBUILD` and `OPETREE INSERT` commands will perform this action as well.
 
 #### Examples
 
 ```
-PRISMADB OPETREE SAVE;
+PRISMADB OPETREE STATUS;
 ```
+
+#### Sample Output
+
+| Size | Height | HeightAllowance |
+| ---- | ------ | --------------- |
+| 1024 | 42     | 21              |
 
 ## OPETREE INSERT
 
@@ -148,6 +151,17 @@ PRISMADB OPETREE REBALANCE STOP;
 PRISMADB OPETREE REBALANCE STATUS;
 ```
 
+#### Sample Output for `OPETREE REBALANCE STATUS`
+
+| `Command`                                            | `Status`      | `StartedAt`           | `InitialHeight` | `CurrentHeight` | `CurrentIteration` | `IterationProgress` | `Stopping` | `CompletedAt` | `ErrorMessage` |
+| ---------------------------------------------------- | ------------- | --------------------- | --------------- | --------------- | ------------------ | ------------------- | ---------- | ------------- | -------------- |
+| `PRISMADB OPETREE REBALANCE STOP AFTER 3 ITERATIONS` | `In Progress` | `2020-01-02 03:04:05` | `62`            | `60`            | `2`                | `66%`               | `False`    | *`null`*      | *`null`*       |
+
+Possible values for `Status`:
+- `Completed`
+- `In Progress`
+- `Error`
+
 ## OPETREE REBUILD
 
 The Order Preserving Encoding (OPE) tree will be rebuild entirely from all the `RANGE` encoding enabled data stored in the database. This is used if the OPE tree stored in the database is out-of-sync with the data.
@@ -163,6 +177,23 @@ PRISMADB OPETREE REBUILD [STATUS]
 
 ```
 PRISMADB OPETREE REBUILD;
+```
+
+## OPETREE SAVE
+
+The Order Preserving Encoding (OPE) tree will be saved in the database for restoration on proxy restarts.
+
+```
+PRISMADB OPETREE SAVE
+```
+
+- The OPE tree is saved in a new table named `PrismaDB_OpeTree`.
+- Execution of the `OPETREE REBUILD` and `OPETREE INSERT` commands will perform this action as well.
+
+#### Examples
+
+```
+PRISMADB OPETREE SAVE;
 ```
 
 ## OPETREE LOAD
@@ -277,3 +308,14 @@ PRISMADB REGISTER USER userid PASSWORD password
 ```
 PRISMADB REGISTER USER 'root' PASSWORD 'qwerty123';
 ```
+
+## Sample Output for Asynchronous Encryption Modifying `STATUS` Commands
+
+| `LatestQuery`          | `Status`      | `OverallProgress` | `ColumnProgress` | `ErrorMessage` |
+| ---------------------- | ------------- | ----------------- | ---------------- | -------------- |
+| `PRISMADB KEYS UPDATE` | `In Progress` | `8/42`            | `255`            | *`null`*       |
+
+Possible values for `Status`:
+- `Completed`
+- `In Progress`
+- `Error`
