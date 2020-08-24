@@ -153,11 +153,12 @@ PRISMADB OPETREE REBALANCE STATUS;
 
 #### Sample Output for `OPETREE REBALANCE STATUS`
 
-| `Command`                                            | `Status`      | `StartedAt`           | `InitialHeight` | `CurrentHeight` | `CurrentIteration` | `IterationProgress` | `Stopping` | `CompletedAt` | `ErrorMessage` |
-| ---------------------------------------------------- | ------------- | --------------------- | --------------- | --------------- | ------------------ | ------------------- | ---------- | ------------- | -------------- |
-| `PRISMADB OPETREE REBALANCE STOP AFTER 3 ITERATIONS` | `In Progress` | `2020-01-02 03:04:05` | `62`            | `60`            | `2`                | `66%`               | `False`    | *`null`*      | *`null`*       |
+| Command                                            | Status      | StartedAt           | InitialHeight | CurrentHeight | CurrentIteration | IterationProgress | Stopping | CompletedAt | ErrorMessage |
+| -------------------------------------------------- | ----------- | ------------------- | ------------- | ------------- | ---------------- | ----------------- | -------- | ----------- | ------------ |
+| PRISMADB OPETREE REBALANCE STOP AFTER 3 ITERATIONS | In Progress | 2020-01-02 03:04:05 | 62            | 60            | 2                | 66%               | False    | *null*      | *null*       |
 
 Possible values for `Status`:
+
 - `Completed`
 - `In Progress`
 - `Error`
@@ -311,11 +312,12 @@ PRISMADB REGISTER USER 'root' PASSWORD 'qwerty123';
 
 ## Sample Output for Asynchronous Encryption Modifying `STATUS` Commands
 
-| `LatestQuery`          | `Status`      | `OverallProgress` | `ColumnProgress` | `ErrorMessage` |
-| ---------------------- | ------------- | ----------------- | ---------------- | -------------- |
-| `PRISMADB KEYS UPDATE` | `In Progress` | `8/42`            | `255`            | *`null`*       |
+| LatestQuery          | Status      | OverallProgress | ColumnProgress | ErrorMessage |
+| -------------------- | ----------- | --------------- | -------------- | ------------ |
+| PRISMADB KEYS UPDATE | In Progress | 8/42            | 255            | *null*       |
 
 Possible values for `Status`:
+
 - `Completed`
 - `In Progress`
 - `Error`
